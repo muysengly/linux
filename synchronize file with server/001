@@ -1,0 +1,23 @@
+```sh
+# sudo apt install sshpass
+
+SERVER_USERNAME="msl"
+SERVER_PASSWORD="asdfghjkl;'"
+SERVER_HOST="msl-hp"
+
+
+SERVER_PATH="/home/msl/test/"
+
+LOCAL_PATH="./test"
+
+sshpass -p "${SERVER_PASSWORD}" rsync -avz --delete "${LOCAL_PATH}" "${SERVER_USERNAME}@${SERVER_HOST}:${SERVER_PATH}"
+
+# sshpass: non-interactive password authentication for SSH
+# rsync: remote file synchronization tool
+# -a: archive mode
+# -v: verbose
+# -z: compress file data during the transfer
+# --delete: delete files in the destination that are not present in the source
+
+
+```
